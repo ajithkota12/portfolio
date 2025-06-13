@@ -8,6 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Moon, Sun, Download, Mail, Phone, Github, Linkedin, ArrowRight, ArrowDown } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Index = () => {
   const [isDark, setIsDark] = useState(true);
@@ -107,26 +108,31 @@ const Index = () => {
     setIsSubmitting(true);
 
     try {
-      // This is a placeholder for the form submission
-      // You'll need to replace this with your chosen service endpoint
-      const response = await fetch('YOUR_FORM_ENDPOINT_HERE', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      // Initialize EmailJS with your public key
+      emailjs.init('c1S87regYXZLE4Gy9');
 
-      if (response.ok) {
-        toast({
-          title: "Message Sent!",
-          description: "Thank you for your message. I'll get back to you soon!",
-        });
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        throw new Error('Failed to send message');
-      }
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        'service_lf3gm8h', // Your service ID
+        'template_ng3bm6c', // Your template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'Kota Ajith Kumar',
+        }
+      );
+
+      console.log('Email sent successfully:', result);
+      
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your message. I'll get back to you soon!",
+      });
+      
+      setFormData({ name: '', email: '', message: '' });
     } catch (error) {
+      console.error('Failed to send email:', error);
       toast({
         title: "Error",
         description: "Failed to send message. Please try again or contact me directly.",
