@@ -201,7 +201,7 @@ const Index = () => {
             <div className="relative">
               <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-gradient-to-r from-blue-500 to-purple-600 shadow-2xl">
                 <img 
-                  src="https://lh3.googleusercontent.com/pw/AP1GczMgvKJxNnRj_8hcgdLOhGJzNnEKQCpv2YU1R6jUjFJOjACiBlAQAiMBJrDXWGGZtZXQqh1_ktbcdmAUcOCa5kI2_dYnNzlNNkJy-F7Z5SvR9gCyng=w2400-h1800"
+                  src="/lovable-uploads/987a6c8c-efd1-4812-94f6-c8b2733181ca.png"
                   alt="Kota Ajith Kumar"
                   className="w-full h-full object-cover"
                 />
