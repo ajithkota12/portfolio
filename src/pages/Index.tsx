@@ -31,25 +31,29 @@ const Index = () => {
       title: "Real-Time Chat Application",
       description: "Interactive chat app with real-time messaging capabilities",
       tech: ["React.js", "Node.js", "PostgreSQL", "Socket.IO"],
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop"
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop",
+      github: "https://github.com/ajithkota12/CHAT-APPLICATION"
     },
     {
       title: "Chrome Productivity Extension",
       description: "Browser extension for enhanced productivity tracking",
       tech: ["Node.js", "PostgreSQL", "Chart.js"],
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&h=300&fit=crop"
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&h=300&fit=crop",
+      github: "https://github.com/ajithkota12/CHROME-EXTENSION-FOR-TIME-TRACKING-AND-PRODUCTIVITY-ANALYTICS"
     },
     {
       title: "Collaborative Document Editor",
       description: "Real-time collaborative editing tool for teams",
       tech: ["React.js", "Node.js", "Socket.IO"],
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500&h=300&fit=crop"
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500&h=300&fit=crop",
+      github: "https://github.com/ajithkota12/REAL-TIME-COLLABORATIVE-DOCUMENT-EDITOR"
     },
     {
       title: "Weather Web App",
       description: "Dynamic weather application with API integration",
       tech: ["Angular", "API Integration"],
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=500&h=300&fit=crop"
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=500&h=300&fit=crop",
+      github: "https://github.com/ajithkota12/-API-INTEGRATION"
     }
   ];
 
@@ -174,10 +178,8 @@ const Index = () => {
             <div className="space-y-4">
               <p className="text-primary font-semibold">Hello, I'm</p>
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-                Kota Ajith
-                <br />
                 <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-                  Kumar
+                  Kota Ajith Kumar
                 </span>
               </h1>
               <p className="text-xl text-muted-foreground">
@@ -307,7 +309,11 @@ const Index = () => {
                       </Badge>
                     ))}
                   </div>
-                  <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                  <Button 
+                    variant="outline" 
+                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                    onClick={() => window.open(project.github, '_blank')}
+                  >
                     View Project <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </CardContent>
